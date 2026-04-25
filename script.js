@@ -19,7 +19,7 @@ document.getElementById('btnDownload').addEventListener('click', async () => {
     showStatus('⏳ Se descarcă ultra-rapid... Așteaptă să apară descărcarea!');
     try {
        
-        const res = await fetch('https://aiprohelper.onrender.com/api/download', {
+        const res = await fetch('/api/download', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ url, quality })
@@ -51,7 +51,7 @@ document.getElementById('btnTranslate').addEventListener('click', async () => {
 
     try {
        
-        const res = await fetch('https://aiprohelper.onrender.com/api/translate', {
+        const res = await fetch('/api/translate', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ url })
@@ -81,7 +81,7 @@ document.getElementById('btnBlur').addEventListener('click', async () => {
 
     try {
         // MODIFICAT: S-a lăsat doar ruta relativă
-        const res = await fetch('https://aiprohelper.onrender.com/api/blur', { method: 'POST', body: formData });
+        const res = await fetch('/api/blur', { method: 'POST', body: formData });
         if (!res.ok) throw new Error('Eroare la procesarea AI');
 
         const blob = await res.blob();
@@ -112,7 +112,7 @@ document.getElementById('btnTTS').addEventListener('click', async () => {
 
     try {
         // MODIFICAT: S-a lăsat doar ruta relativă
-        const res = await fetch('https://aiprohelper.onrender.com/api/tts', {
+        const res = await fetch('/api/tts', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ text: text, voice: voice })
