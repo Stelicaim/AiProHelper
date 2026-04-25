@@ -129,8 +129,6 @@ app.post('/api/tts', async (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Server pornit pe portul ${PORT}.`));
 
-const { exec } = require('child_process');
-
 exec('ffmpeg -version', (err, stdout) => {
     console.log(stdout || err);
 });
