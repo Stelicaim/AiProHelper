@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Tools Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-wrapper">
+        
+        <div class="panel controls-panel">
+            <h1>Video Tools Pro</h1>
+            <h2>By <a href="https://www.instagram.com/stelica.21/">Stelica</a> & <a href="https://www.instagram.com/and_r_e_i.05/">Andrei</a></h2>
+            <p>Platforma ta completă pentru procesare AI-video</p>
+
+            <hr style="margin: 20px 0; border: 1px solid #eee;">
+
+            <h3 style="text-align: left; margin-bottom: 10px;">1. Instrumente YouTube</h3>
+            <div class="input-group">
+                <input type="text" id="videoUrl" placeholder="Lipește link-ul de YouTube (Video sau Shorts) aici...">
+            </div>
+            
+            <div class="options-group">
+                <select id="quality">
+                    <option value="1080">Calitate: 1080p (Full HD)</option>
+                    <option value="720">Calitate: 720p (HD)</option>
+                </select>
+            </div>
+
+            <div class="buttons-group">
+                <button id="btnDownload" class="btn primary">⬇️ Descarcă Video YouTube</button>
+                <button id="btnTranslate" class="btn secondary">📝 Extrage & Tradu Transcriptul</button>
+            </div>
+
+            <hr style="margin: 20px 0; border: 1px solid #eee;">
+
+            <h3 style="text-align: left; margin-bottom: 10px;">2. Blurare Video (Upload PC)</h3>
+            <div class="input-group" style="text-align: left;">
+                <input type="file" id="videoUpload" accept="video/mp4,video/x-m4v,video/*" style="padding: 10px; border: 1px dashed #007bff; width: 100%; margin-bottom: 15px; cursor: pointer;">
+            </div>
+            <div class="buttons-group">
+                <button id="btnBlur" class="btn danger">👁️ Încarcă și Blurează Textul</button>
+            </div>
+
+            <hr style="margin: 20px 0; border: 1px solid #eee;">
+
+            <h3 style="text-align: left; margin-bottom: 10px;">3. Studio Voce AI (Internațional)</h3>
+            <div class="input-group">
+                <textarea id="ttsText" placeholder="Scrie textul aici... (Vocea va citi literă cu literă, exact cum scrii, cu accentul ei specific!)" rows="4" style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-family: inherit; resize: vertical;"></textarea>
+            </div>
+            
+            <div class="options-group">
+                <select id="ttsVoice" style="width: 100%; padding: 10px; font-size: 14px;">
+                    <optgroup label="🇹🇩 Limba Română">
+                        <option value="ro-RO-AlinaNeural">👩 Alina (Natural)</option>
+                        <option value="ro-RO-EmilNeural">👨 Emil (Natural)</option>
+                    </optgroup>
+                    
+                    <optgroup label="🇺🇸 Engleză (Statele Unite)">
+                        <option value="en-US-JennyNeural">👩 Jenny (Clară, Voce de Prezentatoare)</option>
+                        <option value="en-US-ChristopherNeural">👨 Christopher (Profund, Documentar)</option>
+                        <option value="en-US-AriaNeural">👩 Aria (Energică, Reclamă)</option>
+                        <option value="en-US-GuyNeural">👨 Guy (Relaxat, Vlogger)</option>
+                    </optgroup>
+
+                    <optgroup label="🇬🇧 Engleză (Marea Britanie)">
+                        <option value="en-GB-SoniaNeural">👩 Sonia (Accent Britanic Elegant)</option>
+                        <option value="en-GB-RyanNeural">👨 Ryan (Accent Britanic Serios)</option>
+                    </optgroup>
+
+                    <optgroup label="🇪🇸 Limba Spaniolă">
+                        <option value="es-ES-ElviraNeural">👩 Elvira (Spania)</option>
+                        <option value="es-MX-JorgeNeural">👨 Jorge (Mexic)</option>
+                    </optgroup>
+
+                    <optgroup label="🇫🇷 Limba Franceză">
+                        <option value="fr-FR-DeniseNeural">👩 Denise</option>
+                        <option value="fr-FR-HenriNeural">👨 Henri</option>
+                    </optgroup>
+
+                    <optgroup label="🇩🇪 Limba Germană">
+                        <option value="de-DE-KatjaNeural">👩 Katja</option>
+                        <option value="de-DE-ConradNeural">👨 Conrad</option>
+                    </optgroup>
+
+                    <optgroup label="🇮🇹 Limba Italiană">
+                        <option value="it-IT-IsabellaNeural">👩 Isabella</option>
+                        <option value="it-IT-DiegoNeural">👨 Diego</option>
+                    </optgroup>
+                    
+                    <optgroup label="🇯🇵 Limba Japoneză">
+                        <option value="ja-JP-NanamiNeural">👩 Nanami (Anime Style)</option>
+                        <option value="ja-JP-KeitaNeural">👨 Keita (Serios)</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="buttons-group">
+                <button id="btnTTS" class="btn primary" style="background-color: #10a37f;">🎙️ Generează Audio</button>
+            </div>
+
+            <div id="statusMessage" class="status hidden"></div>
+        </div>
+
+        <div class="panel transcript-panel hidden" id="transcriptArea">
+            <div class="transcript-header">
+                <h3>📝 Transcript Video</h3>
+                <span class="badge">Google Translate</span>
+            </div>
+            <div class="transcript-content" id="transcriptText">
+                </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
