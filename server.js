@@ -78,7 +78,7 @@ app.post("/api/download", (req, res) => {
   const fileName = `youtube_${Date.now()}.mp4`;
   const tempFile = path.join(localDir, fileName);
 
-  const cmd = `yt-dlp -f best -o "${tempFile}" "${url}"`;
+  const cmd = `yt-dlp -f "bv*+ba/b" -o "${tempFile}" "${url}"`;
 
   exec(cmd, (err, stdout, stderr) => {
     console.log("STDOUT:", stdout);
