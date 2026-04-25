@@ -126,5 +126,5 @@ app.post('/api/tts', async (req, res) => {
     res.send(Buffer.from(buffer));
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`🚀 Server pornit pe portul ${PORT}.`));
