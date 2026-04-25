@@ -109,7 +109,7 @@ app.post('/api/blur', upload.single('videoFile'), (req, res) => {
 app.post('/api/tts', async (req, res) => {
     const { text } = req.body;
 
-    const response = await fetch("https://api.elevenlabs.io/v1/text-to-speech/YOUR_VOICE_ID", {
+    const response = await fetch("https://api.elevenlabs.io/v1/text-to-speech/8nBBDfYxYXmDNaqTCxPH", {
         method: "POST",
         headers: {
             "xi-api-key": process.env.ELEVEN_API_KEY,
