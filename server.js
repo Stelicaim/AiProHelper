@@ -78,7 +78,9 @@ app.post("/api/download", (req, res) => {
   const fileName = `youtube_${Date.now()}.mp4`;
   const tempFile = path.join(localDir, fileName);
 
-  const cmd = `yt-dlp -f "bestvideo[ext=mp4][height<=${quality}]+bestaudio[ext=m4a]/best" --merge-output-format mp4 -o "${tempFile}" "${url}"`;
+  const proxy = "http://vcLf45l7l9kEGDFQ:CkRvH7MSl7k8PYt1@geo.floppydata.com:10080";
+
+  const cmd = `yt-dlp --proxy "${proxy}" -f best -o "${tempFile}" "${url}"`;
 
   exec(cmd, (err, stdout, stderr) => {
     console.log("STDOUT:", stdout);
